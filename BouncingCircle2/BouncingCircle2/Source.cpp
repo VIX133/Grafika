@@ -17,8 +17,6 @@ void initVertices() {
 		float angle = 2.0f * 3.14159f * i / 34.0f;
 		vertices[i + 1] = vec2(radius * cos(angle), radius * sin(angle));
 	}
-
-	// Új: vonal vertexeinek inicializálása (harmad oldalhosszúság, középen)
 	float lineLength = worldSize / 3.0; // Harmad oldalhosszúság
 	lineVertices[0] = vec2(-lineLength / 1.0f, 0.0f); // Bal végpont
 	lineVertices[1] = vec2(lineLength / 1.0f, 0.0f);  // Jobb végpont
@@ -39,13 +37,13 @@ eAnimationType	animationType = Bouncing;
 
 GLuint centerLocation;
 GLuint radiusLocation;
-GLfloat			lineY = 0.0f; // Új: a vonal függőleges pozíciója
-GLuint lineYLocation; // Új uniform változó helye a shaderben
+GLfloat			lineY = 0.0f; 
+GLuint lineYLocation;
 
-GLboolean useAngle = GL_FALSE; // Új változó: jelzi, hogy a 25°-os szögű mozgást használjuk-e
-const float directionAngle = 25.0f * 3.14159f / 180.0f; // 25 fok radiánban
-GLfloat dirX = (10.0f / 600.0f) * cos(directionAngle); // 10 pixel normalizálva (alap windowWidth = 600)
-GLfloat dirY = (10.0f / 600.0f) * sin(directionAngle); // 10 pixel normalizálva
+GLboolean useAngle = GL_FALSE;
+const float directionAngle = 25.0f * 3.14159f / 180.0f; 
+GLfloat dirX = (10.0f / 600.0f) * cos(directionAngle); 
+GLfloat dirY = (10.0f / 600.0f) * sin(directionAngle); 
 GLboolean isMoving = GL_FALSE;
 
 void initShaderProgram() {
@@ -66,7 +64,6 @@ void initShaderProgram() {
 
 	glEnableVertexAttribArray(0);
 
-	// Új: vonal inicializálása
 	glBindBuffer(GL_ARRAY_BUFFER, BO[VBOLineData]);
 	glBufferData(GL_ARRAY_BUFFER, lineVertices.size() * sizeof(vec2), lineVertices.data(), GL_STATIC_DRAW);
 	glBindVertexArray(VAO[VAOLineData]);
@@ -86,12 +83,10 @@ void initShaderProgram() {
 }
 
 void display(GLFWwindow* window, double currentTime) {
-	glClearColor(1.0f, 1.0f, 0.0f, 1.0f); // Sárga háttér
+	glClearColor(1.0f, 1.0f, 0.0f, 1.0f); 
 	glClear(GL_COLOR_BUFFER_BIT);
 	//float pixelRadius = 50.0f / (float)windowWidth; // 50 pixel normalizálva
 	const float pixelRadius = 0.08333f; // 50 pixel / 600 pixel = 0.08333
-
-	// 1. Kör rajzolása
 	switch (animationType) {
 	case Bouncing:
 		matModel = mat4(1.0);
