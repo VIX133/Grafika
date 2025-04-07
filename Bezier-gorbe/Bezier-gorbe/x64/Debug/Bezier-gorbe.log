@@ -1,0 +1,7 @@
+﻿  Source.cpp
+C:\Users\vikto\source\repos\Bezier-gorbe\Bezier-gorbe\Source.cpp(59,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\vikto\source\repos\Bezier-gorbe\Bezier-gorbe\Source.cpp(70,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\vikto\source\repos\Bezier-gorbe\Bezier-gorbe\Source.cpp(98,52): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\vikto\source\repos\Bezier-gorbe\Bezier-gorbe\Source.cpp(104,53): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\vikto\source\repos\Bezier-gorbe\Bezier-gorbe\Source.cpp(110,49): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  Bezier-gorbe.vcxproj -> C:\Users\vikto\source\repos\Bezier-gorbe\x64\Debug\Bezier-gorbe.exe
